@@ -76,10 +76,18 @@ public class PadController : MonoBehaviour
     }
     public void GameOver()
     {
+        if (score > PlayerPrefs.GetInt("MaxScore"))
+        {
+            // Update the maximum score
+            PlayerPrefs.SetInt("MaxScore", score);
+        }
+
         GameManager.Instance.isGameOver = true;
         this.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
+        int maxScore = PlayerPrefs.GetInt("MaxScore", 0);
+        Debug.Log(maxScore);
 
     }
 

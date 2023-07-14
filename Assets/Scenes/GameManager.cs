@@ -34,18 +34,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PlayButtonClicked()
-    {
-        SceneManager.LoadScene("GameScene");
-        isGameOver = false;
-    }
-    public void ReplayButtonClicked()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        isGameOver = false;
-    }
-    public void MenuButtonClicked()
-    {
-        SceneManager.LoadScene("MenuScene");
-    }
+    
 }
