@@ -1,10 +1,21 @@
 using UnityEngine;
+using TMPro;
 
 public class PadController : MonoBehaviour
 {
     public SpriteRenderer padSpriteRenderer;
     public Sprite basketballSprite;
     public Sprite footballSprite;
+    public GameObject gameOverPanel;
+    private int score;
+    public TextMeshProUGUI scoreText;
+    
+
+    private void Start()
+    {
+        gameOverPanel.SetActive(false);
+        scoreText.text = score.ToString();
+    }
 
     private void Update()
     {
@@ -25,6 +36,7 @@ public class PadController : MonoBehaviour
                 }
             }
         }
+        scoreText.text  = score.ToString();
 
         
     }
@@ -60,11 +72,14 @@ public class PadController : MonoBehaviour
 
     public void IncreaseScore()
     {
-        Debug.Log("Score Increased");
+        score++;
     }
     public void GameOver()
     {
-        Debug.Log("Gameover");
+        GameManager.Instance.isGameOver = true;
+        this.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
+        gameOverPanel.SetActive(true);
 
     }
 

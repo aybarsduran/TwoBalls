@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 263612629}
   - component: {fileID: 263612630}
   m_Layer: 0
-  m_Name: TWO (4)
+  m_Name: TwoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 403593984}
   - component: {fileID: 403593983}
   m_Layer: 0
-  m_Name: PLAY (3)
+  m_Name: play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,11 +284,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403593982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.192, y: -487.95258, z: -32554.287}
-  m_LocalScale: {x: 336.13748, y: 336.13748, z: 336.13748}
+  m_LocalPosition: {x: -3.0384002, y: 2.503952, z: -6510.8574}
+  m_LocalScale: {x: 67.22749, y: 28.011454, z: 67.22749}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2120304225}
+  m_Father: {fileID: 1708798714}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 631009613}
   - component: {fileID: 631009614}
   m_Layer: 0
-  m_Name: Group 3
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 1483545756}
   - component: {fileID: 1483545757}
   m_Layer: 0
-  m_Name: BALLS
+  m_Name: BallsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 1708798716}
   - component: {fileID: 1708798715}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +657,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 12, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 403593984}
   m_Father: {fileID: 2120304225}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -966,7 +967,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 403593984}
   - {fileID: 2024290437}
   - {fileID: 1553808211}
   - {fileID: 631009613}

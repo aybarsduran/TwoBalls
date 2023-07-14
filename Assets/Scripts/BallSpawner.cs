@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
@@ -5,6 +6,7 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] private GameObject footballBallPrefab;
     [SerializeField] private GameObject basketballBallPrefab;
     public float spawnInterval = 1f;
+    private List<GameObject> cloneObjects = new List<GameObject>();
 
     private float timer;
 
@@ -28,21 +30,33 @@ public class BallSpawner : MonoBehaviour
             // Spawn a ball
             SpawnBall();
         }
+        if (GameManager.Instance.isGameOver)
+        {
+            DestroyCloneObjects();
+        }
     }
 
     private void SpawnBall()
     {
-        GameObject selectedBallPrefab = (Random.Range(0, 2) == 0) ? footballBallPrefab : basketballBallPrefab;
-        // Instantiate the ball prefab at the spawner's position
-        GameObject ball = Instantiate(selectedBallPrefab, transform.position, Quaternion.identity);
-
-        // Set the ball's initial velocity (if needed)
-        Rigidbody2D ballRigidbody = ball.GetComponent<Rigidbody2D>();
-        if (ballRigidbody != null)
+        if (!GameManager.Instance.isGameOver)
         {
-            // Add force or set velocity based on your desired behavior
-            // ballRigidbody.AddForce(Vector2.up * initialForce, ForceMode2D.Impulse);
-            // ballRigidbody.velocity = Vector2.up * initialSpeed;
+            GameObject selectedBallPrefab = (Random.Range(0, 2) == 0) ? footballBallPrefab : basketballBallPrefab;
+            // Instantiate the ball prefab at the spawner's position
+            GameObject ball = Instantiate(selectedBallPrefab, transform.position, Quaternion.identity);
+            cloneObjects.Add(ball);
+
         }
+
+
+
+    }
+    private void DestroyCloneObjects()
+    {
+        foreach (GameObject clone in cloneObjects)
+        {
+            Destroy(clone);
+        }
+
+        cloneObjects.Clear();
     }
 }
