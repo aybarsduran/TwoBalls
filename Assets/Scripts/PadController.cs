@@ -9,6 +9,7 @@ public class PadController : MonoBehaviour
     public GameObject gameOverPanel;
     private int score;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI endScoreText;
     
 
     private void Start()
@@ -85,10 +86,12 @@ public class PadController : MonoBehaviour
         GameManager.Instance.isGameOver = true;
         this.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
+        endScoreText.text = score.ToString();
         gameOverPanel.SetActive(true);
         int maxScore = PlayerPrefs.GetInt("MaxScore", 0);
         Debug.Log(maxScore);
 
     }
+   
 
 }

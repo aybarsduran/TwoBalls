@@ -34,5 +34,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int GetMaxScore()
+    {
+        int maxScore = PlayerPrefs.GetInt("MaxScore");
+        return maxScore;
+    }
+
     
 }

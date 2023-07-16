@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class PanelController : MonoBehaviour
 {
+    public TextMeshProUGUI maxScoreText;
     public void MenuButtonClicked()
     {
         SceneManager.LoadScene("MenuScene");
@@ -18,5 +18,10 @@ public class PanelController : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
         GameManager.Instance.isGameOver = false;
+    }
+
+    private void Start()
+    {
+        maxScoreText.text = "record " +  GameManager.Instance.GetMaxScore().ToString();  
     }
 }
